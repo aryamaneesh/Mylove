@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secret For Maneesh ❤️</title>
+
+<style>
+body{
+  background:linear-gradient(to right,#ffd6e7,#fff0f5);
+  font-family:Arial;
+  text-align:center;
+  overflow:hidden;
+}
+
+.box{
+  margin-top:120px;
+  background:white;
+  width:400px;
+  padding:30px;
+  border-radius:20px;
+  margin:auto;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+  position:relative;
+}
+
+button{
+  padding:12px 22px;
+  border:none;
+  border-radius:25px;
+  margin:10px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.start{
+  background:#ff4d88;
+  color:white;
+}
+
+.yes{
+  background:#ff4d88;
+  color:white;
+}
+
+.no{
+  background:#ccc;
+  position:absolute;
+}
+
+.msg{
+  color:#ff2e7a;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.heart{
+  position:absolute;
+  color:#ff4d88;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(100vh);}
+to{transform:translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="content">
+
+<h2>Hey Maneesh ❤️</h2>
+<p>I made something special only for you...</p>
+
+<button class="start" onclick="nextStep()">Open Secret 💌</button>
+
+</div>
+
+<script>
+
+function nextStep(){
+document.getElementById("content").innerHTML=`
+
+<h2>My Dearest Hubby ❤️</h2>
+
+<p>
+From the day you came into my life,<br>
+everything became beautiful 🥹💕
+</p>
+
+<h3>Will you be my Valentine Forever? 💍</h3>
+
+<button class="yes" onclick="accepted()">YES 💖</button>
+
+<button class="no" id="noBtn"
+onmouseover="runAway()">NO 😜</button>
+
+<p id="msg" class="msg"></p>
+`;
+}
+
+let texts=[
+"Think again 😜",
+"You belong to Thakkudu ❤️",
+"No option available 😂",
+"Only YES allowed 😍",
+"Maneeshhhh choose wisely 💕"
+];
+
+let i=0;
+
+function runAway(){
+let btn=document.getElementById("noBtn");
+
+btn.style.left=Math.random()*250+"px";
+btn.style.top=Math.random()*200+"px";
+
+document.getElementById("msg").innerText=
+texts[i%texts.length];
+
+i++;
+}
+
+function accepted(){
+document.body.innerHTML=`
+
+<h1>💍 YESSSS ❤️</h1>
+
+<h2>
+Forever my Valentine 💕<br>
+Forever my husband 🥹<br><br>
+Love you endlessly,<br>
+<b>Your Thakkudu ❤️</b>
+</h2>
+
+<img src="ourphoto.jpg"
+style="width:300px;border-radius:20px;margin-top:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+`;
+
+// hearts animation
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+},400);
+}
+
+</script>
+
+</body>
+</html>
